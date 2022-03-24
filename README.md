@@ -1,3 +1,12 @@
+## Sample Simulation Results
+### DSDA
+
+![Screenshot (125)](https://user-images.githubusercontent.com/65244703/159867533-f79ccce6-0375-44d3-9419-0460f2b88297.png)
+
+#### CSDA
+
+![Screenshot (126)](https://user-images.githubusercontent.com/65244703/159867613-2bf24bfc-e9a7-4bbb-b82e-12db5bb57947.png)
+
 ## Simulator Installation and Setup
 Disclaimer: The skeleton code of the environment setup is adopted from NUS soc, written by Prof David Hsu.
 Original github page: https://github.com/AdaCompNUS/CS4278-5478-MotionPlanning
@@ -38,11 +47,16 @@ roscd planner/src
 sh run.sh map2.png 1 1 0
 ```
 Set the robot goal as (x=5, y=5) and run the planner:
+
+For discrete space, we use DSDA.py which is the implementation of standard A* search.
 ```
 python DSDA.py --goal '5,5' --com 0
 ```
+For continuous space, we use CSDA.py which is the implementation of hybrid A* search.
+```
+python CSDA.py --goal '5,5' --com 0
+```
 The flag `--com`  indicates whether the COM1 map is used, as it requires a special set of environment parameters. 
 
-## Debugging and Visualization
-For visualization, we recommend the ROS Stage. RViz provides 2.5-D visualization, but may be noisy due to the asynchronous communication delay of ROS.
+
 
